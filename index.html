@@ -110,6 +110,19 @@
     footer { padding: 25px 0; background: #041638; color: #b7c5df; font-size: .86rem; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-inner strong { color: white; }
+
+    .whatsapp-float {
+      position: fixed; right: 24px; bottom: 24px; z-index: 1000;
+      width: 62px; height: 62px; display: grid; place-items: center;
+      border-radius: 50%; background: #25d366; color: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.22);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .whatsapp-float:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 12px 28px rgba(0,0,0,.27); }
+    .whatsapp-float svg { width: 34px; height: 34px; fill: currentColor; }
+    .whatsapp-float:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+    @media (max-width: 620px) { .whatsapp-float { right: 16px; bottom: 16px; width: 56px; height: 56px; } }
+
     @media (max-width: 850px) {
       .nav-links { gap: 15px; } .nav-links a:not(.btn) { display: none; }
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 38px; }
@@ -236,11 +249,11 @@
           </div>
           <div class="contact-item">
             <small>Correo electrónico</small>
-            <strong>Configura aquí tu correo de contacto</strong>
+            <strong><a href="mailto:phernandez@conecta365.net">phernandez@conecta365.net</a></strong>
           </div>
           <div class="contact-item">
             <small>WhatsApp / Teléfono</small>
-            <strong>Agrega aquí tu número de atención</strong>
+            <strong><a href="https://wa.me/593968300089" target="_blank" rel="noopener">+593 96 830 0089</a></strong>
           </div>
         </div>
       </div>
@@ -253,6 +266,12 @@
       <span>Conectamos tus planes con soluciones.</span>
     </div>
   </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/593968300089" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Conecta365 por WhatsApp" title="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" role="img" aria-hidden="true">
+      <path d="M16.04 3C8.9 3 3.1 8.77 3.1 15.88c0 2.27.6 4.49 1.74 6.45L3 29l6.85-1.79a13.02 13.02 0 0 0 6.18 1.57h.01c7.13 0 12.94-5.78 12.94-12.89 0-3.44-1.35-6.68-3.79-9.12A12.87 12.87 0 0 0 16.04 3zm0 23.58h-.01c-1.9 0-3.77-.51-5.4-1.48l-.39-.23-4.06 1.06 1.08-3.95-.25-.4a10.65 10.65 0 0 1-1.64-5.7c0-5.89 4.8-10.68 10.69-10.68 2.85 0 5.53 1.11 7.55 3.13a10.6 10.6 0 0 1 3.13 7.55c0 5.89-4.8 10.7-10.7 10.7zm5.87-8.01c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.68s1.16 3.11 1.32 3.33c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.3-.21-.62-.37z"/>
+    </svg>
+  </a>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
